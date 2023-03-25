@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
-  //there is a bug here
+  //there is a bug to fix here
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URL);
+    const conn = await mongoose.connect(
+      "mongodb+srv://Book-library:PhaBfqeAMijRnp18@remicluster.kyndevf.mongodb.net/?retryWrites=true&w=majority"
+    )
 
     console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline);
   } catch (error) {
